@@ -9,9 +9,9 @@ func Insert(s Student) (id int64, err error) {
 	}
 	defer conn.Close()
 
-	sql_register := `INSERT INTO alunos (nome, graduacao, idade) VALUES ($1, $2, $3) RETURNING id`
+	sql_register := "INSERT INTO alunos (nome, graduacao, idade) VALUES ($1, $2, $3) RETURNING id"
 
-	sql_login := `INSERT INTO login (email, senha) VALUES ($1, $2) RETURNING id`
+	sql_login := "INSERT INTO login (email, senha) VALUES ($1, $2) RETURNING id"
 
 	err = conn.QueryRow(sql_register, s.Nome, s.Graduacao, s.Idade).Scan(&id)
 	err = conn.QueryRow(sql_login, s.Email, s.Senha).Scan(&id)
