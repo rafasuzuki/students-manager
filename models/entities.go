@@ -8,3 +8,9 @@ type Student struct {
 	Email     string `json:"email"`
 	Senha     string `json:"senha"`
 }
+
+type Login struct {
+	ID        int64  `json:"id"`
+	Email     string `json:"email"`
+	Senha     string `json:"senha"`
+}
