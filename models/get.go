@@ -7,6 +7,7 @@ func GetLogin(email string) (login Login, err error) {
 	if err != nil {
 		return
 	}
+	
 	defer conn.Close()
 
 	row := conn.QueryRow(`SELECT * FROM login WHERE email=$1`, email)
